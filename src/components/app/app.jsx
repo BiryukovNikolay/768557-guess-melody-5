@@ -17,10 +17,10 @@ const App = (props) => {
         <Route exact path="/">
           <WelcomeScreen errorsCount={errorsCount} />
         </Route>
-        <Route exact path="/dev-artist">
+        <Route path="/dev-artist">
           <ArtistQuestionScreen />
         </Route>
-        <Route exact path="/dev-genre">
+        <Route path="/dev-genre">
           <GenreQuestionScreen />
         </Route>
         <Route exact path="/login">

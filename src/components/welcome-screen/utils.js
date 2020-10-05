@@ -1,17 +1,12 @@
 export const getErrorTextValue = (value) => {
-  let mistakeName;
   switch (value) {
     case value = 1:
-      mistakeName = `ошибку`;
-      break;
-    case 0:
+      return `ошибку`;
     case 2:
     case 3:
     case 4:
-      mistakeName = `ошибки`;
-      break;
+      return `ошибки`;
     default:
-      mistakeName = `ошибок`;
+      return `ошибок`;
   }
-  return mistakeName;
 };

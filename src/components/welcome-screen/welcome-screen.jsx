@@ -1,20 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {getErrorTextValue} from "./utils";
 
 const WelcomeScreen = (props) => {
-// eslint-disable-next-line react/prop-types
   const {errorsCount} = props;
-  const setErrorTextValue = (value) => {
-    if (value === 1) {
-      return `ошибку`;
-    } else if (value > 4 || value === 0) {
-      return `ошибок`;
-    } else {
-      return `ошибки`;
-    }
-  };
-
-  let errorTextValue = setErrorTextValue(errorsCount);
+  const errorTextValue = getErrorTextValue(errorsCount);
 
   return (
     <section className="welcome">

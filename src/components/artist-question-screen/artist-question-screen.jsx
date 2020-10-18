@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import artistQuestionProp from "./artist-question.prop";
 
+
 const ArtistQuestionScreen = (props) => {
-  const {onAnswer, question} = props;
+  const {onAnswer, question, renderPlayer} = props;
   const {
     answers,
     song,
   } = question;
-
   return (
     <section className="game game--artist">
       <header className="game__header">
@@ -33,12 +33,7 @@ const ArtistQuestionScreen = (props) => {
         <h2 className="game__title">Кто исполняет эту песню?</h2>
         <div className="game__track">
           <div className="track">
-            <button className="track__button track__button--play" type="button" />
-            <div className="track__status">
-              <audio
-                src={song.src}
-              />
-            </div>
+            {renderPlayer(song.src, 0)}
           </div>
         </div>
 
@@ -65,6 +60,7 @@ const ArtistQuestionScreen = (props) => {
 
 ArtistQuestionScreen.propTypes = {
   onAnswer: PropTypes.func.isRequired,
+  renderPlayer: PropTypes.func.isRequired,
   question: artistQuestionProp,
 };
 
